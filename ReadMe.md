@@ -2,7 +2,13 @@
 code: usando el clash-of-clans-api con node, usando express se adjunta el codigo:
 
 
+const express = require("express");
+const axios = require("axios");
+const cors = require("cors");
+const clashApi = require("clash-of-clans-api");
 
+const app = express();
+app.use(cors());
  let client = clashApi({
    token: COC_API_TOKEN,  Optional, can also use COC_API_TOKEN env variable
  });
