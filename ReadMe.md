@@ -66,7 +66,7 @@ app.use(cors());
    console.log("Server started on port 5000");
  });
 
-se utiliza .env para el puerto de la express, se implementa en VITE_MY_PROXY
+se utiliza .env para el puerto de express (localhost:5000), se implementa en VITE_MY_PROXY
 VITE_API_KEY para la llave,
 VITE_API_URL es "https://api.clashofclans.com/v1"
 
