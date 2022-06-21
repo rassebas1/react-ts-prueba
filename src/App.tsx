@@ -9,12 +9,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [clans, setClans] = useState<Array<Clan>>();
 
-  const onSearchRecieved = (clans: Array<Clan>) => {
-    setIsLoading(true);
-    setClans(clans);
-    setIsLoading(false);
-  };
-
   useEffect(() => {
     setIsLoading(true);
     const clanService = new ClanService();
@@ -27,7 +21,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <CallToAction clans={clans ? clans : []} isLoading={isLoading} onClick={setClans}/>
+        <CallToAction
+          clans={clans ? clans : []}
+          isLoading={isLoading}
+          onClick={setClans}
+        />
       </header>
       <div>
         <Album clans={clans ? clans : []} isLoading={isLoading} />

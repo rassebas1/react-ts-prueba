@@ -5,6 +5,7 @@ interface CallToActionProps {
   clans: Array<Clan>;
   isLoading: boolean;
   onClick: (value: Array<Clan>) => void;
+  
 }
 
 const CallToAction = (props: CallToActionProps) => {
@@ -12,19 +13,20 @@ const CallToAction = (props: CallToActionProps) => {
   const [clansState, setClansState] = useState<Array<Clan>>([]);
 
   const handleSearch = async (searchValue: string) => {
-    console.log("handleSearch", searchValue);
+    
 
+    
     const clanService = new ClanService();
     return await clanService
       .searchClan(searchValue)
       .then((clans: Array<Clan>) => {
-        console.log(clans);
+        
         setClansState(clans);
         return clans;
       });
   };
   useEffect(() => {
-    console.log("useEffect", props.clans);
+    
     props.onClick(clansState);
   }, [clansState]);
 

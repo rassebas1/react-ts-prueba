@@ -55,7 +55,7 @@ export class ClanService{
         ;
     }
     public searchClan=async(name:string)=>{
-        console.log("searchClan");
+        
         const response=await axios.get(`/${name}`,{
             baseURL:this.API_URL,
         });
