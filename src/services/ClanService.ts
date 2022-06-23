@@ -61,7 +61,7 @@ export class ClanService{
         });
         return response.data.items as Array<Clan>;
     }
-    public getClanById = async () => {
+    public getClan = async () => {
         const response = await axios.get("/",{
             baseURL:this.API_URL,
         })           

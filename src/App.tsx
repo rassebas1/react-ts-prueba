@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     setIsLoading(true);
     const clanService = new ClanService();
-    clanService.getClanById().then((response) => {
+    clanService.getClan().then((response) => {
       setClans(response);
       setIsLoading(false);
     });
